@@ -1,5 +1,8 @@
 const express = require('express');
 const cors = require('cors');
+const ModelRoutes = require('./src/api/models/model.routes');
+const UserRoutes = require('./src/api/users/user.routes');
+const BrandRoutes = require('./src/api/brands/brand.routes');
 const { setError } = require('./src/utils/errors/errors');
 const { connect } = require('./src/utils/db/db');
 //PORT
@@ -32,7 +35,10 @@ app.use(express.json({ limit: '5mb' }));
 app.use(express.urlencoded({ extended: true, limit: '5mb' }));
 
 
-//ROUTES TODO
+//ROUTES 
+app.use('/api/models', ModelRoutes);
+app.use('/api/users', UserRoutes);
+app.use('/api/brands', BrandRoutes);
 
 //ERROR HANDLING TODO
 app.use('*', (req, res, next) => {
