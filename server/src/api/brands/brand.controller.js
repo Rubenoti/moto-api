@@ -13,7 +13,7 @@ const getAllBrand = async (req, res, next) => {
 const getOneBrand = async (req, res, next) => {
     try {
         const { id } = req.params;
-        const product = await Brand.findById(id);
+        const product = await Brand.findById(id).populate('models')
         if (!product) {
             return next(setError(404, "Brand not found"))
         }
