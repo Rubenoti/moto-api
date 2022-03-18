@@ -5,8 +5,7 @@ const modelSchema = new mongoose.Schema({
     type: { type: String, required: true, trim: true },
     cc: { type: Number, required: true, trim: true },
     image: { type: String, required: false, trim: true },
-    brand: { type: mongoose.Schema.Types.ObjectId, ref: 'brands', required: true, trim: true },
-
+    brand: { type: String, required: true, trim: true },
 },
     {
         timestamps: true

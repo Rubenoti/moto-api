@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Brand = require('../../../src/models/brand.model');
+const Brand = require('../../../src/api/brands/brand.model');
 require('dotenv').config();
 
 const URIDB = process.env.MONGO_DB;
@@ -9,21 +9,21 @@ const brands = [
         name: "BMW",
         description: "",
         country: "Alemania",
-        logo: "",
+        logo: "https://res.cloudinary.com/dd3vgq4ks/image/upload/v1647615041/Assets-motoApi/bmw-logo-1_pdtnf9.png",
         models: [],
     },
     {
         name: "Benelli",
         description: "",
         country: "Italia",
-        logo: "",
+        logo: "https://res.cloudinary.com/dd3vgq4ks/image/upload/v1647615040/Assets-motoApi/benelli-logo_qgchyl.svg",
         models: [],
     },
     {
         name: "Aprilia",
         description: "",
         country: "Italia",
-        logo: "",
+        logo: "https://res.cloudinary.com/dd3vgq4ks/image/upload/v1647615040/Assets-motoApi/aprilia-logo_wulsm4.png",
         models: [],
     },
 

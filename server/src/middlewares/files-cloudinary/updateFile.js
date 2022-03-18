@@ -7,7 +7,7 @@ const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
         folder: 'Assets-motoApi',
-        allowedFormats: ['jpg', 'png', 'jpeg', 'gif']
+        allowedFormats: ['jpg', 'png', 'jpeg', 'gif', 'svg']
     }
 })
 

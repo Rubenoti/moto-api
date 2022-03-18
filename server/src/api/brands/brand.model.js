@@ -5,7 +5,7 @@ const brandSchema = new mongoose.Schema({
     description: { type: String, required: false, trim: true },
     country: { type: String, required: false, trim: true },
     logo: { type: String, required: false, trim: true },
-    models: { type: mongoose.Schema.Types.ObjectId, ref: 'brands', required: false, trim: true },
+    models: [{ type: mongoose.Schema.Types.ObjectId, ref: 'brands', required: false, trim: true }],
 },
     {
         timestamps: true
