@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 
 const brandSchema = new mongoose.Schema({
-    name: { type: string, required: true, trim: true },
-    description: { type: string, required: false, trim: true },
-    country: { type: string, required: true, trim: true },
-    logo: { type: string, required: false, trim: true },
+    name: { type: String, required: true, trim: true },
+    description: { type: String, required: false, trim: true },
+    country: { type: String, required: false, trim: true },
+    logo: { type: String, required: false, trim: true },
+    models: { type: mongoose.Schema.Types.ObjectId, ref: 'brands', required: false, trim: true },
 },
     {
         timestamps: true

@@ -1,4 +1,5 @@
 const UserRoutes = require('express').Router();
+const { isAuth } = require('../../middlewares/auth/auth');
 
 const {
     loginUser,
@@ -6,7 +7,7 @@ const {
     registerUser } = require('./user.controller');
 
 UserRoutes.post('/login', loginUser);
-UserRoutes.post('/logout', logoutUser);
+UserRoutes.post('/logout', [isAuth], logoutUser);
 UserRoutes.post('/register', registerUser);
 
 module.exports = UserRoutes;

@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "brand-seed": "node src/utils/seeds/brand.seed.js",
+    "model-seed": "node src/utils/seeds/model.seed.js"
   },
   "author": "Gonzalo, Ruben and Garny",
   "license": "ISC",

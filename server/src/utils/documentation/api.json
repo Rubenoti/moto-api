@@ -1,0 +1,88 @@
+
+
+{
+    "Brand": "/api/brands",
+    "schema": {
+        "name": "String",
+        "description": "String",
+        "country": "String",
+        "logo": "String"
+    },
+     "endopoints": [
+        {
+            "action": "GET", 
+            "URL": "/api/brands/"
+        },
+        {
+            "action": "GET",
+            "URL": "/api/brands/id"
+        },
+        {
+            "action": "POST",
+            "URL": "/api/brands/"
+        },
+        {
+            "action": "PACH",
+            "URL": "/api/brands/id"
+        },
+        {
+            "action": "DELETE",
+            "URL": "/api/brands/id"
+        }
+
+    ],
+    "Model": "/api/models",
+    "$schema": {
+        "firstname": "String",
+        "type": "String",
+        "cc": "Number",
+        "image": "String",
+        "brand":"String" 
+        
+    },
+    "$endopoints": [
+        {
+            "action": "GET", 
+            "URL": "/api/models/"
+        },
+        {
+            "action": "GET",
+            "URL": "/api/models/id"
+        },
+        {
+            "action": "POST",
+            "URL": "/api/models/"
+        },
+        {
+            "action": "PACH",
+            "URL": "/api/models/id"
+        },
+        {
+            "action": "DELETE",
+            "URL": "/api/models/id"
+        }
+    ],
+    "$$User": "/api/users",
+    "$$schema": {
+        "name": "String",
+        "email": "String",
+        "password": "String"
+    },
+    "$$endpoints": [
+        
+        {
+            "action": "POST",
+            "URL": "/api/users/register"
+        },
+        {
+            "action": "POST",
+            "URL": "/api/users/login"
+        },
+        {
+            "action": "POST",
+            "URL": "/api/users/logout"
+        }
+       
+    ]
+    
+}

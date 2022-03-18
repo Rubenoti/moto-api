@@ -3,6 +3,7 @@ const cors = require('cors');
 const ModelRoutes = require('./src/api/models/model.routes');
 const UserRoutes = require('./src/api/users/user.routes');
 const BrandRoutes = require('./src/api/brands/brand.routes');
+const { configCloudinary } = require('./src/utils/cloudinary/config');
 const { setError } = require('./src/utils/errors/errors');
 const { connect } = require('./src/utils/db/db');
 //PORT
@@ -11,7 +12,7 @@ const PORT = process.env.PORT || 8080;
 // INITIALIZE APP
 connect();
 const app = express();
-
+configCloudinary();
 //API DOCUMENTATION TODO
 
 // HEADERS CONFIGURATION
@@ -40,9 +41,9 @@ app.use('/api/models', ModelRoutes);
 app.use('/api/users', UserRoutes);
 app.use('/api/brands', BrandRoutes);
 
-//ERROR HANDLING TODO
+//ERROR HANDLING 
 app.use('*', (req, res, next) => {
-    return next(setError(404, 'Not Found'));
+    return next(setError(404, 'Route not Found'));
 });
 
 //API !SHOW

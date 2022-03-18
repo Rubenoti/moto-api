@@ -1,5 +1,6 @@
 const BrandRoutes = require('express').Router();
-
+const upload = require('../../middlewares//files-cloudinary/updateFile');
+const { isAuth } = require('../../middlewares/auth/auth');
 const {
     getAllBrand,
     getOneBrand,
@@ -10,8 +11,8 @@ const {
 
 BrandRoutes.get('/', getAllBrand);
 BrandRoutes.get('/:id', getOneBrand);
-BrandRoutes.post('/', createBrand);
-BrandRoutes.patch('/:id', updateBrand);
-BrandRoutes.delete('/:id', deleteBrand);
+BrandRoutes.post('/', [isAuth], upload.single('logo'), createBrand);
+BrandRoutes.patch('/:id', [isAuth], upload.single('logo'), updateBrand);
+BrandRoutes.delete('/:id', [isAuth], deleteBrand);
 
 module.exports = BrandRoutes;
